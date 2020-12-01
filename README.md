@@ -56,7 +56,12 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year
         <tr>
             <td>Sammy</td>
             <td></td>
-            <td><a href="https://github.com/1Turtle/AoC20">1Turtle/AoC20</a></td>
+            <td><a href="https://github.com/1Turtle/AdventOfCode2020">1Turtle/AdventOfCode2020</a></td>
+        </tr>
+        <tr>
+            <td>Jonas</td>
+            <td><a href="https://github.com/joblo2213/AdventOfCode2019">joblo2213/AdventOfCode2019</a></td>
+            <td><a href="https://github.com/joblo2213/AdventOfCode2020">joblo2213/AdventOfCode2020</a></td>
         </tr>
     </tbody>
 </table>
