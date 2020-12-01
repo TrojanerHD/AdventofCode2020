@@ -14,9 +14,10 @@
             "runtimeArgs": [
                 "run",
                 "--inspect-brk",
-                "--allow-all"
+                "--allow-read"
             ],
-            "attachSimplePort": 9229
+            "attachSimplePort": 9229,
+            "outputCapture": "std"
         }
     ]
 }
