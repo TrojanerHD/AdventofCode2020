@@ -2,7 +2,7 @@
 My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year/2020) challenge
 
 [![Language](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
-[![Environment](https://img.shields.io/badge/Environment-Deno-white)](https://nodejs.org/en/)
+[![Environment](https://img.shields.io/badge/Environment-Deno-white)](https://deno.land/)
 [![Days completed](https://img.shields.io/badge/Days%20completed-0-red)](https://github.com/TrojanerHD/AdventofCode/tree/main/src/2020)
 
 ## Check out solutions from others
