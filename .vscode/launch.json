@@ -14,10 +14,14 @@
             "runtimeArgs": [
                 "run",
                 "--inspect-brk",
+                "--unstable",
                 "--allow-read"
             ],
             "attachSimplePort": 9229,
-            "outputCapture": "std"
+            "outputCapture": "std",
+            "args": [
+                "2",
+            ]
         }
     ]
 }

@@ -1,24 +1,29 @@
+import Day from "./day.ts";
+import { existsSync } from "https://deno.land/std/fs/mod.ts";
+
 export interface Log {
   message: string;
   value: string;
 }
 export type Response = Array<Log> | undefined;
-export class Day {
+export class Solution {
   private _day: string;
 
   constructor(day: number) {
     this._day = day.toString();
     if (day <= 9) this._day = `0${this._day}`;
-    this.readValues();
   }
 
   async readValues(): Promise<void> {
     Deno.chdir(`./src/${this._day}`);
-    const execute: { main: (data: string) => Response } = await import(
-      `./${this._day}/index.ts`
-    );
+    if (!existsSync("./index.ts")) {
+      console.error(`Day ${this._day} is not solved`);
+      return;
+    }
+    const execute: any = await import(`./${this._day}/index.ts`);
     const file: string = await Deno.readTextFile(`./values.txt`);
-    const response: Response = execute.main(file);
+    const day: Day = new execute.default();
+    const response: Response = day.main(file);
     Deno.chdir("../../");
     for (let i = 0; i < response!.length; i++) {
       const log: Log = response![i];
@@ -33,4 +38,7 @@ export class Day {
   }
 }
 
-new Day(2);
+for (const arg of Deno.args) {
+  if (!isNaN(+arg)) await new Solution(+arg).readValues();
+  else console.error(`Parameter ${arg} is not a number`);
+}
