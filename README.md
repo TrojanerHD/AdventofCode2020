@@ -1,4 +1,5 @@
 # Advent of Code 2020
+
 My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year/2020) challenge
 
 [![Language](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
@@ -6,6 +7,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year
 [![Days completed](https://img.shields.io/badge/Days%20completed-2-red)](https://github.com/TrojanerHD/AdventofCode2020/tree/main/src/)
 
 ## Check out solutions from others
+
 <table>
     <thead>
         <tr>
@@ -22,8 +24,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year
         </tr>
         <tr>
             <td>Hax</td>
-            <td><a href="https://github.com/Schlauer-Hax/advent-of-code">Schlauer-Hax/advent-of-code</a></td>
-            <td></td>
+            <td colspan=2 align="center"><a href="https://github.com/Schlauer-Hax/advent-of-code">Schlauer-Hax/advent-of-code</a></td>
         </tr>
         <tr>
             <td>networkException</td>
