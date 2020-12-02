@@ -33,4 +33,4 @@ export class Day {
   }
 }
 
-new Day(1);
+new Day(2);
