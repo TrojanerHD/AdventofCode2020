@@ -32,8 +32,8 @@ export default class Day03 implements Day {
       },
       {
         message: "Multiplied number of trees encountered in all slopes",
-        value: treeCountAllCombosMultiplied.toString(),
-      },
+        value: treeCountAllCombosMultiplied.toString()
+      }
     ];
   }
 

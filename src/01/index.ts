@@ -3,7 +3,7 @@ import { Response } from "../main.ts";
 
 export default class Day01 implements Day {
   main(data: string): Response {
-    const lines: string[] = data.split("\n");
+    const lines: string[] = data.split(/\r?\n/g);
     let outputFirstSolution: number | undefined = undefined;
     let outputSecondSolution: number | undefined = undefined;
     for (const value1 of lines) {

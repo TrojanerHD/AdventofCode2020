@@ -3,7 +3,7 @@ import Day from "../day.ts";
 
 export default class Day02 implements Day {
   main(data: string): Response {
-    const passwords: string[] = data.split("\n");
+    const passwords: string[] = data.split(/\r?\n/g);
     let matchCountFirstPart: number = 0;
     let matchCountSecondPart: number = 0;
 
