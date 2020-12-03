@@ -3,9 +3,10 @@ import { Response } from "../main.ts";
 import Grid, { Pixel } from "./Grid.ts";
 
 export default class Day03 implements Day {
+  private _grid: Grid = new Grid();
+
   main(data: string): Response {
     const rows: string[] = data.split(/\r?\n/g);
-    const grid: Grid = new Grid();
     for (let i = 0; i < rows.length; i++) {
       const row: string = rows[i];
       const pixels: string[] = row.split("");
@@ -13,15 +14,36 @@ export default class Day03 implements Day {
         const pixelSymbol: string = pixels[j];
         let pixel: Pixel = "air";
         if (pixelSymbol === "#") pixel = "tree";
-        grid.addPixel(j + 1, i + 1, pixel);
+        this._grid.addPixel(j + 1, i + 1, pixel);
       }
     }
-    let x = 1;
-    let treeCount = 0
-    for (let y = 1; y <= grid._highestY; y++) {
-      if (grid.getPixel(x, y) === 'tree') treeCount++;
-      x += 3;
+    let x: number = 1;
+    let treeCountFirstResult: number = this.countTrees(3, 1);
+    let treeCountAllCombosMultiplied: number = treeCountFirstResult;
+    treeCountAllCombosMultiplied *= this.countTrees(5, 1);
+    treeCountAllCombosMultiplied *= this.countTrees(7, 1);
+    treeCountAllCombosMultiplied *= this.countTrees(1, 2);
+    treeCountAllCombosMultiplied *= this.countTrees(1, 1);
+
+    return [
+      {
+        message: "Number of trees encountered",
+        value: treeCountFirstResult.toString(),
+      },
+      {
+        message: "Multiplied number of trees encountered in all slopes",
+        value: treeCountAllCombosMultiplied.toString()
+      }
+    ];
+  }
+
+  private countTrees(xIncrement: number, yIncrement: number): number {
+    let x: number = 1;
+    let treeCount: number = 0;
+    for (let y: number = 1; y <= this._grid._highestY; y += yIncrement) {
+      if (this._grid.getPixel(x, y) === "tree") treeCount++;
+      x += xIncrement;
     }
-    return [{message: "Number of trees encountered", value: treeCount.toString()}];
+    return treeCount;
   }
 }
