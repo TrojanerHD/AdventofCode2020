@@ -1,6 +1,7 @@
+import Day from "../day.ts";
 import { Response } from "../main.ts";
 
-export default class Day01 {
+export default class Day01 implements Day {
   main(data: string): Response {
     const lines: string[] = data.split("\n");
     let outputFirstSolution: number | undefined = undefined;
