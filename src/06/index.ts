@@ -43,11 +43,4 @@ export default class Day06 implements Day {
       },
     ];
   }
-
-  //Stolen from https://stackoverflow.com/a/16227294/9634099
-  private static intersect(a: string[], b: string[]) {
-    let t: string[];
-    if (b.length > a.length) (t = b), (b = a), (a = t); // indexOf to loop over shorter
-    return a.filter((e: string) => b.indexOf(e) > -1);
-  }
 }
