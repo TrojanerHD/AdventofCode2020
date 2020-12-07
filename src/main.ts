@@ -5,7 +5,8 @@ export interface Log {
   message: string;
   value: string;
 }
-export type Response = Array<Log> | undefined;
+export type Response = Array<Log>;
+
 export class Solution {
   private _day: string;
 
@@ -21,14 +22,17 @@ export class Solution {
       return;
     }
     const execute: any = await import(`./${this._day}/index.ts`);
-    const file: string = await Deno.readTextFile(`./values.txt`);
+    const file: string = Deno.readTextFileSync(`./values.txt`);
     const day: Day = new execute.default();
+    const timeStart: number = performance.now();
     const response: Response = day.main(file.trim());
+    const timeEnd: number = performance.now();
     Deno.chdir('../../');
-    for (let i = 0; i < response!.length; i++) {
-      const log: Log = response![i];
+    for (let i = 0; i < response.length; i++) {
+      const log: Log = response[i];
       this.logger(i + 1, log.message, log.value);
     }
+    console.log(`It took ${timeEnd - timeStart}ms to solve day ${this._day}`);
   }
 
   private logger(part: number, message: string, value: string) {
