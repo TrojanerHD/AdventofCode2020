@@ -1,5 +1,5 @@
-import Day from "../day.ts";
-import { Response } from "../main.ts";
+import Day from '../day.ts';
+import { Response } from '../main.ts';
 
 export default class Day06 implements Day {
   main(data: string): Response {
@@ -7,38 +7,40 @@ export default class Day06 implements Day {
     let totalAnswersPartOne: number = 0;
     let totalAnswersPartTwo: number = 0;
     for (const group of groups) {
-      const groupToOnePerson: string = group.replace(/\r?\n/g, "");
-      const answered: string[] = groupToOnePerson.split("");
+      const groupToOnePerson: string = group.replace(/\r?\n/g, '');
+      const answered: string[] = groupToOnePerson.split('');
       const answeredWithoutDuplicates: string[] = [...new Set(answered)];
       totalAnswersPartOne += answeredWithoutDuplicates.length;
 
       const people: string[] = group.split(/\r?\n/g);
       let allAnswers: string[] = [];
-      if (people.length === 1) allAnswers = people[0].split("");
+      if (people.length === 1) allAnswers = people[0].split('');
       else {
-        const firstPerson: string[] = people[0].split("");
+        const firstPerson: string[] = people[0].split('');
         const removeAnswer: string[] = [];
         for (const firstAnswer of firstPerson) {
           for (let i = 1; i < people.length; i++) {
-            let answers: string[] = people[i].split("");
+            let answers: string[] = people[i].split('');
             if (!answers.includes(firstAnswer)) {
               removeAnswer.push(firstAnswer);
               break;
             }
           }
         }
-        allAnswers = firstPerson.filter((value: string): boolean => !removeAnswer.includes(value));
+        allAnswers = firstPerson.filter(
+          (value: string): boolean => !removeAnswer.includes(value)
+        );
       }
       totalAnswersPartTwo += allAnswers.length;
     }
 
     return [
       {
-        message: "Total questions answered",
+        message: 'Total questions answered',
         value: totalAnswersPartOne.toString(),
       },
       {
-        message: "Total questions answered by all groups",
+        message: 'Total questions answered by all groups',
         value: totalAnswersPartTwo.toString(),
       },
     ];

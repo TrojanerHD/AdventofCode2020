@@ -1,4 +1,4 @@
-import Day07 from "./index.ts";
+import Day07 from './index.ts';
 
 export default class Bag {
   _subBags: Bag[];
@@ -28,7 +28,7 @@ export default class Bag {
   }
 
   containsShinyBag(): boolean {
-    if (this._subBags.find((bag: Bag) => bag._color === "shiny gold"))
+    if (this._subBags.find((bag: Bag) => bag._color === 'shiny gold'))
       return true;
     for (const subBag of this._subBags) {
       const realSubBag: Bag | undefined = this.realSubBags(subBag);
@@ -40,7 +40,7 @@ export default class Bag {
 
   countSubBags(multiplier: number): number {
     let totalBags = 0;
-    if (this.getColor() !== "shiny gold")
+    if (this.getColor() !== 'shiny gold')
       totalBags += this.getCount() * multiplier;
     for (const subBag of this._subBags) {
       const realSubBag: Bag | undefined = this.realSubBags(subBag);

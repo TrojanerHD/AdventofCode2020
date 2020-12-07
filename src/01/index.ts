@@ -1,5 +1,5 @@
-import Day from "../day.ts";
-import { Response } from "../main.ts";
+import Day from '../day.ts';
+import { Response } from '../main.ts';
 
 export default class Day01 implements Day {
   main(data: string): Response {
@@ -23,11 +23,11 @@ export default class Day01 implements Day {
     }
     return [
       {
-        message: "Entries that sum up to 2020 multiplied",
+        message: 'Entries that sum up to 2020 multiplied',
         value: outputFirstSolution!.toString(),
       },
       {
-        message: "Three entries that sum up to 2020 multiplied",
+        message: 'Three entries that sum up to 2020 multiplied',
         value: outputSecondSolution!.toString(),
       },
     ];

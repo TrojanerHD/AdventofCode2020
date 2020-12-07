@@ -1,5 +1,5 @@
-import { Response } from "../main.ts";
-import Day from "../day.ts";
+import { Response } from '../main.ts';
+import Day from '../day.ts';
 
 export default class Day02 implements Day {
   main(data: string): Response {
@@ -8,16 +8,16 @@ export default class Day02 implements Day {
     let matchCountSecondPart: number = 0;
 
     for (const password of passwords) {
-      const passwordSplit: string[] = password.split(": ");
-      const passwordPolicy: string[] = passwordSplit[0].split(" ");
+      const passwordSplit: string[] = password.split(': ');
+      const passwordPolicy: string[] = passwordSplit[0].split(' ');
       const letterCount: string = passwordPolicy[0];
-      const min: string = letterCount.split("-")[0];
-      const max: string = letterCount.split("-")[1];
+      const min: string = letterCount.split('-')[0];
+      const max: string = letterCount.split('-')[1];
       const letter: string = passwordPolicy[1];
       const potentialPassword: string = passwordSplit[1];
       const regex = `^([^${letter}]*${letter}[^${letter}]*){${min},${max}}$`;
       if (potentialPassword.match(new RegExp(regex))) matchCountFirstPart++;
-      const potentialPasswordChars = potentialPassword.split("");
+      const potentialPasswordChars = potentialPassword.split('');
       const firstMatches: boolean = potentialPasswordChars[+min - 1] === letter;
       const lastMatches: boolean = potentialPasswordChars[+max - 1] === letter;
 
@@ -26,11 +26,11 @@ export default class Day02 implements Day {
     }
     return [
       {
-        message: "Number of matching passwords with first rule",
+        message: 'Number of matching passwords with first rule',
         value: matchCountFirstPart.toString(),
       },
       {
-        message: "Number of matching passwords with second rule",
+        message: 'Number of matching passwords with second rule',
         value: matchCountSecondPart.toString(),
       },
     ];

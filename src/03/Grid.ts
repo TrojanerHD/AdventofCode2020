@@ -1,4 +1,4 @@
-export type Pixel = "tree" | "air";
+export type Pixel = 'tree' | 'air';
 export interface PixelPos {
   x: number;
   y: number;

@@ -1,6 +1,6 @@
-import Day from "../day.ts";
-import { Response } from "../main.ts";
-import Grid, { Pixel } from "./Grid.ts";
+import Day from '../day.ts';
+import { Response } from '../main.ts';
+import Grid, { Pixel } from './Grid.ts';
 
 export default class Day03 implements Day {
   private _grid: Grid = new Grid();
@@ -9,11 +9,11 @@ export default class Day03 implements Day {
     const rows: string[] = data.split(/\r?\n/g);
     for (let i = 0; i < rows.length; i++) {
       const row: string = rows[i];
-      const pixels: string[] = row.split("");
+      const pixels: string[] = row.split('');
       for (let j = 0; j < pixels.length; j++) {
         const pixelSymbol: string = pixels[j];
-        let pixel: Pixel = "air";
-        if (pixelSymbol === "#") pixel = "tree";
+        let pixel: Pixel = 'air';
+        if (pixelSymbol === '#') pixel = 'tree';
         this._grid.addPixel(j + 1, i + 1, pixel);
       }
     }
@@ -27,13 +27,13 @@ export default class Day03 implements Day {
 
     return [
       {
-        message: "Number of trees encountered",
+        message: 'Number of trees encountered',
         value: treeCountFirstResult.toString(),
       },
       {
-        message: "Multiplied number of trees encountered in all slopes",
-        value: treeCountAllCombosMultiplied.toString()
-      }
+        message: 'Multiplied number of trees encountered in all slopes',
+        value: treeCountAllCombosMultiplied.toString(),
+      },
     ];
   }
 
@@ -41,7 +41,7 @@ export default class Day03 implements Day {
     let x: number = 1;
     let treeCount: number = 0;
     for (let y: number = 1; y <= this._grid._highestY; y += yIncrement) {
-      if (this._grid.getPixel(x, y) === "tree") treeCount++;
+      if (this._grid.getPixel(x, y) === 'tree') treeCount++;
       x += xIncrement;
     }
     return treeCount;

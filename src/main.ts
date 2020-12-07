@@ -1,5 +1,5 @@
-import Day from "./day.ts";
-import { existsSync } from "https://deno.land/std/fs/mod.ts";
+import Day from './day.ts';
+import { existsSync } from 'https://deno.land/std/fs/mod.ts';
 
 export interface Log {
   message: string;
@@ -16,7 +16,7 @@ export class Solution {
 
   async readValues(): Promise<void> {
     Deno.chdir(`./src/${this._day}`);
-    if (!existsSync("./index.ts")) {
+    if (!existsSync('./index.ts')) {
       console.error(`Day ${this._day} is not solved`);
       return;
     }
@@ -24,7 +24,7 @@ export class Solution {
     const file: string = await Deno.readTextFile(`./values.txt`);
     const day: Day = new execute.default();
     const response: Response = day.main(file);
-    Deno.chdir("../../");
+    Deno.chdir('../../');
     for (let i = 0; i < response!.length; i++) {
       const log: Log = response![i];
       this.logger(i + 1, log.message, log.value);
