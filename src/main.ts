@@ -23,7 +23,7 @@ export class Solution {
     const execute: any = await import(`./${this._day}/index.ts`);
     const file: string = await Deno.readTextFile(`./values.txt`);
     const day: Day = new execute.default();
-    const response: Response = day.main(file);
+    const response: Response = day.main(file.trim());
     Deno.chdir('../../');
     for (let i = 0; i < response!.length; i++) {
       const log: Log = response![i];
