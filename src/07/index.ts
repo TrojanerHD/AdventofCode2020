@@ -32,11 +32,11 @@ export default class Day07 implements Day {
     return [
       {
         message: 'The total number of all bags that can contain the shiny bag',
-        value: containSubBags.toString(),
+        value: containSubBags,
       },
       {
         message: 'The total number of bags the shiny bag has to include',
-        value: totalBags.toString(),
+        value: totalBags,
       },
     ];
   }

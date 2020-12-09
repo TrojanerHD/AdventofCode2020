@@ -24,11 +24,11 @@ export default class Day01 implements Day {
     return [
       {
         message: 'Entries that sum up to 2020 multiplied',
-        value: outputFirstSolution!.toString(),
+        value: outputFirstSolution!,
       },
       {
         message: 'Three entries that sum up to 2020 multiplied',
-        value: outputSecondSolution!.toString(),
+        value: outputSecondSolution!,
       },
     ];
   }

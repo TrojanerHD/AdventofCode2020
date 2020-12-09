@@ -27,11 +27,11 @@ export default class Day02 implements Day {
     return [
       {
         message: 'Number of matching passwords with first rule',
-        value: matchCountFirstPart.toString(),
+        value: matchCountFirstPart,
       },
       {
         message: 'Number of matching passwords with second rule',
-        value: matchCountSecondPart.toString(),
+        value: matchCountSecondPart,
       },
     ];
   }

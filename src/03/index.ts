@@ -28,11 +28,11 @@ export default class Day03 implements Day {
     return [
       {
         message: 'Number of trees encountered',
-        value: treeCountFirstResult.toString(),
+        value: treeCountFirstResult,
       },
       {
         message: 'Multiplied number of trees encountered in all slopes',
-        value: treeCountAllCombosMultiplied.toString(),
+        value: treeCountAllCombosMultiplied,
       },
     ];
   }

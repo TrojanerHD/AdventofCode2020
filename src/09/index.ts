@@ -49,12 +49,12 @@ export default class Day09 implements Day {
       {
         message:
           'The first number where there are no two numbers among the previous 25 numbers that sum up to the number',
-        value: numberPartOne.toString(),
+        value: numberPartOne,
       },
       {
         message:
           'The low number and the highest number of the set of numbers that sum up to the invalid number',
-        value: (lowNumberPartTwo + highNumberPartTwo).toString(),
+        value: lowNumberPartTwo + highNumberPartTwo,
       },
     ];
   }

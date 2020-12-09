@@ -49,11 +49,11 @@ export default class Day08 implements Day {
       }
     }
     return [
-      { message: 'Value before loop', value: valueFirstPart.toString() },
+      { message: 'Value before loop', value: valueFirstPart },
       {
         message:
           'Value after one instruction was changed so the program could end',
-        value: this._bootCode.getValue().toString(),
+        value: this._bootCode.getValue(),
       },
     ];
   }

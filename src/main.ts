@@ -3,9 +3,9 @@ import { existsSync } from 'https://deno.land/std/fs/mod.ts';
 
 export interface Log {
   message: string;
-  value: string;
+  value: number;
 }
-export type Response = Array<Log>;
+export type Response = Log[];
 
 export class Solution {
   private _day: string;
@@ -35,7 +35,7 @@ export class Solution {
     console.log(`It took ${timeEnd - timeStart}ms to solve day ${this._day}`);
   }
 
-  private logger(part: number, message: string, value: string) {
+  private logger(part: number, message: string, value: number) {
     console.log(
       `[Year 2020, Day ${this._day}, Part: ${part}] ${message}: ${value}`
     );

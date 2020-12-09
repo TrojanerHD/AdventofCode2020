@@ -116,11 +116,11 @@ export default class Day04 implements Day {
     return [
       {
         message: 'Number of valid passports without restrictions',
-        value: numberOfValidPassports.toString(),
+        value: numberOfValidPassports,
       },
       {
         message: 'Number of valid passports with restrictions',
-        value: numberOfValidPassportsPartTwo.toString(),
+        value: numberOfValidPassportsPartTwo,
       },
     ];
   }

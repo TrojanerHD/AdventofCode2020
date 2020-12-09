@@ -37,11 +37,11 @@ export default class Day06 implements Day {
     return [
       {
         message: 'Total questions answered',
-        value: totalAnswersPartOne.toString(),
+        value: totalAnswersPartOne,
       },
       {
         message: 'Total questions answered by all groups',
-        value: totalAnswersPartTwo.toString(),
+        value: totalAnswersPartTwo,
       },
     ];
   }

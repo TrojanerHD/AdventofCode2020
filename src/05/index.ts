@@ -38,8 +38,8 @@ export default class Day05 implements Day {
       }
 
     return [
-      { message: 'The highest seat id is', value: highestSeat.toString() },
-      { message: 'My seat id', value: mySeat.toString() },
+      { message: 'The highest seat id is', value: highestSeat },
+      { message: 'My seat id', value: mySeat },
     ];
   }
 }
