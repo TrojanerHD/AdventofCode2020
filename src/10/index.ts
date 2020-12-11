@@ -33,7 +33,6 @@ export default class Day10 implements Day {
     }
     let solutionPartOne: number = difference1 * difference3;
 
-    const optimized: number[] = [];
     const calculateArray: number[][] = [];
     let tempCalculate: number[] = [];
     for (let i: number = 0; i < this._numberArray.length; i++) {
@@ -44,15 +43,12 @@ export default class Day10 implements Day {
           : this._numberArray[this._numberArray.length - 1] + 3;
 
       const difference = this.differenceToNext(previous, next);
-      if (difference <= 3) {
-        optimized.push(i);
+      if (difference <= 3) tempCalculate.push(this._numberArray[i]);
+      else if (tempCalculate.length !== 0) {
         tempCalculate.push(this._numberArray[i]);
-      } else if (tempCalculate.length !== 0) {
-        tempCalculate.push(this._numberArray[i]);
-        const previousFromTempCalculate: number =
-          this._numberArray[
-            this._numberArray.indexOf(tempCalculate[0]) - 1
-          ];
+        const previousFromTempCalculate: number = this._numberArray[
+          this._numberArray.indexOf(tempCalculate[0]) - 1
+        ];
         if (previousFromTempCalculate)
           tempCalculate.unshift(previousFromTempCalculate);
         calculateArray.push(tempCalculate);
@@ -64,7 +60,6 @@ export default class Day10 implements Day {
       this._solutions.push(calculate);
       solutions *= this.solve(calculate) + 1;
     }
-    //this.solve(withoutDifference3Numbers, optimized);
 
     return [
       {
@@ -83,10 +78,7 @@ export default class Day10 implements Day {
     return next - current;
   }
 
-  private solve(
-    array: number[],
-    startIndex: number = 0
-  ): number {
+  private solve(array: number[], startIndex: number = 0): number {
     let solutions: number = 0;
     for (let i: number = startIndex; i < array.length; i++) {
       const newArray = array.filter(
