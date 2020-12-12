@@ -15,14 +15,12 @@ export default class Day10 implements Day {
     let difference3: number = 1;
     let previous: number = 0;
 
-    const difference3Numbers: number[] = [];
 
     for (let i: number = 0; i < this._numberArray.length; i++) {
       const current = this._numberArray[i];
       switch (current - previous) {
         case 3:
           difference3++;
-          difference3Numbers.push(current);
           break;
         case 1:
           difference1++;
