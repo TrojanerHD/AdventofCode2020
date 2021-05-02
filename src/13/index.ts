@@ -10,9 +10,6 @@ export interface BusTimestamp {
 
 export default class Day13 implements Day {
   private _busTimestamps: BusTimestamp[] = [];
-  private _workerCount = 0;
-  private _workers: Worker[] = [];
-  private _workerValues: { i: number; count: number }[] = [];
 
   main(data: string): Response {
     const lines: string[] = data.split(/\r?\n/g);
@@ -48,6 +45,7 @@ export default class Day13 implements Day {
         current: parsedTimestamp,
       });
     }
+    console.log('[Year 2020, Day 13, Part: 2] WARNING: BRUTE FORCE. DEPENDING ON YOUR SYSTEM THE SOLUTION MIGHT TAKE A WHILE (on my system, it took 34311874ms to solve day 13)')
     const partTwo: number = this.partTwo();
     return [
       {
