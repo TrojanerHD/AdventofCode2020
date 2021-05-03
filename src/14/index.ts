@@ -3,7 +3,7 @@ import { Response } from '../main.ts';
 
 export default class Day14 implements Day {
   private _mem: number[] = [];
-  private _memV2: number[] = [];
+  private _memV2: { pos: number; val: number }[] = [];
   private _mask: string[] = [];
 
   main(data: string): Response {
@@ -20,15 +20,15 @@ export default class Day14 implements Day {
       }
     }
 
-    let totalPart1: number = 0;
-    for (const value of this._mem) {
-      if (value) totalPart1 += value;
-    }
+    let numbers: number[] = Array.from(this._mem, (x: number) =>
+      !isNaN(x) ? x : 0
+    );
+    const totalPart1: number = numbers.reduce((r, c) => r + c, 0);
 
-    let totalPart2: number = 0;
-    for (const value of this._memV2) {
-      if (value) totalPart2 += value;
-    }
+    const memV2: number[] = [];
+    for (const val of this._memV2) memV2.push(val.val);
+    numbers = Array.from(memV2, (x: number) => (!isNaN(x) ? x : 0));
+    const totalPart2: number = numbers.reduce((r, c) => r + c, 0);
 
     return [
       {
@@ -85,15 +85,25 @@ export default class Day14 implements Day {
     const maxRange: number = (this._mask.join('').match(/X/g) || []).length;
     for (let i = 0; i < Math.pow(2, maxRange); i++) {
       let tempValue: string = value;
-      let binNum: string[] = i.toString(2).split('');
-      while (binNum.length < maxRange) binNum.unshift('0');
+      let binNum: string[] = (
+        '0'.repeat(maxRange - i.toString(2).length) + i.toString(2)
+      ).split('');
 
       for (let j: number = 0; j < this._mask.length; j++) {
         if (this._mask[j] !== 'X') continue;
         tempValue = this.replaceChar(tempValue, binNum[0], j);
         binNum.shift();
       }
-      this._memV2[parseInt(tempValue, 2)] = val;
+
+      let skip: boolean = false;
+      for (let i: number = 0; i < this._memV2.length; i++)
+        if (this._memV2[i].pos === parseInt(tempValue, 2)) {
+          this._memV2[i].val = val;
+          skip = true;
+          break;
+        }
+      if (skip) continue;
+      this._memV2.push({ pos: parseInt(tempValue, 2), val });
     }
   }
   //Stolen from https://www.geeksforgeeks.org/how-to-replace-a-character-at-a-particular-index-in-javascript/
