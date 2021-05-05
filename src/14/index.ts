@@ -8,7 +8,7 @@ export default class Day14 implements Day {
 
   main(data: string): Response {
     for (const line of data.split(/\r?\n/g)) {
-      const lineSplit = line.split(/ = /);
+      const lineSplit: string[] = line.split(/ = /);
       const operation: string = lineSplit[0];
       const value: string = lineSplit[1];
       if (operation === 'mask') this._mask = value.split('');
@@ -53,28 +53,6 @@ export default class Day14 implements Day {
     this._mem[pos] = parseInt(value, 2);
   }
 
-  /*private maskV2(pos: number, val: number): void {
-    let value: string =
-      '0'.repeat(this._mask.length - val.toString(2).length) + val.toString(2);
-    for (let i: number = 0; i < this._mask.length; i++) {
-      const sym: string = this._mask[i];
-      if (sym === '1') value = this.replaceChar(value, sym, i);
-    }
-    const maxRange: number = (this._mask.join('').match(/X/g) || []).length;
-    for (let i = 0; i < Math.pow(2, maxRange); i++) {
-      let tempValue: string = value;
-      let binNum: string[] = i.toString(2).split('');
-      while (binNum.length < maxRange) binNum.unshift('0');
-
-      for (let j: number = 0; j < this._mask.length; j++) {
-        if (this._mask[j] !== 'X') continue;
-        tempValue = this.replaceChar(tempValue, binNum[0], j);
-        binNum.shift();
-      }
-      if (!this._memV2[pos]) this._memV2[pos] = [];
-      this._memV2[pos].push(parseInt(tempValue, 2));
-    }
-  }*/
   private maskV2(pos: number, val: number): void {
     let value: string =
       '0'.repeat(this._mask.length - pos.toString(2).length) + pos.toString(2);
