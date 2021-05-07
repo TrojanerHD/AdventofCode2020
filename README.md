@@ -4,7 +4,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/year
 
 [![Language](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Environment](https://img.shields.io/badge/Environment-Deno-white)](https://deno.land/)
-[![Days completed](https://img.shields.io/badge/Days%20completed-15-red)](https://github.com/TrojanerHD/AdventofCode2020/tree/main/src/)
+[![Days completed](https://img.shields.io/badge/Days%20completed-16-red)](https://github.com/TrojanerHD/AdventofCode2020/tree/main/src/)
 
 ## Check out solutions from others
 
