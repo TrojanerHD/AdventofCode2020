@@ -90,12 +90,6 @@ export default class Day16 implements Day {
         );
         if (filteredArray.length === 1) {
           fieldNames[i] = filteredArray[0];
-          /*possibleFields.filter(
-            (_value: string[], index: number) => index !== i
-          );
-          impossibleFields.filter(
-            (_value: string[], index: number) => index !== i
-          );*/
         }
       }
 
