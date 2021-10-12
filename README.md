@@ -20,9 +20,9 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
     <tbody>
         <tr>
             <td>TrojanerHD</td>
-						<td>➡️ <a href="https://github.com/TrojanerHD/AdventofCode2015">AdventofCode2015</a></td>
+						<td><a href="https://github.com/TrojanerHD/AdventofCode2015">AdventofCode2015</a></td>
             <td><a href="https://github.com/TrojanerHD/AdventofCode2019">AdventofCode2019</a></td>
-            <td><a href="https://github.com/TrojanerHD/AdventofCode2020">AdventofCode2020</a></td>
+            <td>➡️ <a href="https://github.com/TrojanerHD/AdventofCode2020">AdventofCode2020</a></td>
         </tr>
         <tr>
             <td>Schlauer-Hax</td>
