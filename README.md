@@ -75,7 +75,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
       </tr>
       <tr>
         <td>1Turtle</td>
-        <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2015%20-%20LUA">AdventOfCode/2015 - LUA</a></td>
+        <td></td>
         <td></td>
         <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2020%20-%20CPP">AdventOfCode/2020 - CPP</a></td>
         <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2021%20-%20LUA">AdventOfCode/2021 - LUA</a></td>
