@@ -70,8 +70,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
     <tr>
       <td>daanbreur</td>
       <td></td>
-      <td colspan=2 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
-      <td></td>
+      <td colspan=3 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
     </tr>
     <tr>
       <td>1Turtle</td>
@@ -106,7 +105,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
       <td></td>
       <td></td>
       <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2020">aoc/2020</a></td>
-      <td></td>
+      <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2021">aoc/2021</a></td>
     </tr>
   </tbody>
 </table>
