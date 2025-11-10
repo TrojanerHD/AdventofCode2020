@@ -64,6 +64,12 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
       <td><a href="https://github.com/Seralius/AOC2021">AOC2021</a></td>
     </tr>
     <tr>
+      <td>MelanX</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td>🟥networkException</td>
       <td><a href="https://github.com/networkException/AdventOfCode/tree/2019">AdventOfCode/tree/2019</a></td>
       <td><a href="https://github.com/networkException/AdventOfCode/tree/2020">AdventOfCode/tree/2020</a></td>
