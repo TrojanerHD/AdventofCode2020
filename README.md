@@ -33,7 +33,7 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
       <td>derNiklaas</td>
       <td><a href="https://github.com/derNiklaas/Advent-of-Code-2019">Advent-of-Code-2019</a></td>
       <td><a href="https://github.com/derNiklaas/AoC-2020">AoC-2020</a></td>
-      <td><a href="https://github.com/derNiklaas/Advent-Of-Code-2021">Advent-Of-Code-2021</a></td>
+      <td><a href="https://github.com/derNiklaas/Advent-of-Code-2021">Advent-of-Code-2021</a></td>
     </tr>
     <tr>
       <td>LeMoonStar</td>
@@ -65,6 +65,12 @@ My personal solutions of the [Advent of Code 2020](https://adventofcode.com/2020
     </tr>
     <tr>
       <td>MelanX</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lypsilonx</td>
       <td></td>
       <td></td>
       <td></td>
